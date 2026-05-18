@@ -108,7 +108,7 @@ runs:
     - name: Terraform Plan
       if: ${{ inputs.command == 'plan' }}
       id: tf_plan
-      uses: Technolog-Ltd/ActionLib-Terraform-Control@v1.0.0
+      uses: Technolog-Ltd/ActionLib-Terraform-Control@main
       env:
         TF_VAR_github_details: ${{ toJson(github) }}
         TF_VAR_account_config: ${{ inputs.config }}
@@ -144,7 +144,7 @@ runs:
 
     - name: Terraform Apply
       if: ${{ inputs.command == 'apply' }}
-      uses: Technolog-Ltd/ActionLib-Terraform-Control@v1.0.0
+      uses: Technolog-Ltd/ActionLib-Terraform-Control@main
       env:
         TF_VAR_github_details: ${{ toJson(github) }}
         TF_VAR_account_config: ${{ inputs.config }}
