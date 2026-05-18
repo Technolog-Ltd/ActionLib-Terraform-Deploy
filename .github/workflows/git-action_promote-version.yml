@@ -245,14 +245,14 @@ jobs:
 
       - name: Version Management
         id: promote_version
-        uses: Technolog-Ltd/ActionLib-Version-Management@v1.0.0
+        uses: Technolog-Ltd/ActionLib-Version-Management@main
         with:
           pr_number: ${{ needs.discover.outputs.pr_number }}
           version_file: ${{ matrix.version_file }}
           push_changes: false
 
       - name: Create Logs
-        uses: Technolog-Ltd/ActionLib-Create-Log@v1.1.2
+        uses: Technolog-Ltd/ActionLib-Create-Log@main
         if: ${{ needs.discover.outputs.pr_number != '' }}
         with:
           pr_number: ${{ needs.discover.outputs.pr_number }}
@@ -260,7 +260,7 @@ jobs:
           version_file: ${{ matrix.version_file }}
 
       - name: Generate ChangeLog
-        uses: Technolog-Ltd/ActionLib-Generate-Changelog@v1.0.0
+        uses: Technolog-Ltd/ActionLib-Generate-Changelog@main
         if: ${{ needs.discover.outputs.pr_number != '' }}
         with:
           pr_number: ${{ needs.discover.outputs.pr_number }}
