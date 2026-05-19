@@ -51,5 +51,5 @@ environments = {
 }
 
 import_resources = {
-  repository = "ActionLibrary-Terraform-Deploy"
+  repository = "ActionLib-Terraform-Deploy"
 }
